@@ -1,3 +1,4 @@
+const { writeFile } = require('fs');
 const inquirer = require('inquirer');
 
 inquirer
@@ -10,12 +11,12 @@ inquirer
     {
         type: 'input',
         name: 'description',
-        message: 'Enter the description of your README.',
+        message: 'Enter a short description to your README explaining the what, why, and how.',
     },
     {
         type: 'input',
         name: 'installation',
-        message: 'Enter the installation instruction.',
+        message: 'Enter the steps required to install your project by using a step-by-step guide. Include screenshots.',
     },
     {
         type: 'input',
@@ -45,6 +46,9 @@ inquirer
 
   ])
   .then((answers) => {
+    writeFile('README.md', data, (err) => {
+        if (err) throw err;
+    });
     // Use user feedback for... whatever!!
   })
   .catch((error) => {
