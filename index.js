@@ -1,5 +1,17 @@
-// const { writeFile } = require('fs');
-// const inquirer = require('inquirer');
+const writeFile = require('writeFile');
+const fs = require('fs');
+const inquirer = require('inquirer');
+
+const filePath = './node_modules'
+
+fs.readFile(filePath, function onReadFile(err, result) {
+    if (err) {
+        console.log('Error: ' + err)
+        return
+    }
+
+    console.log('File successfully read: ' + result)
+})
 
 // import inquirer from "inquirer";
 // import {09-NodeJS-Challenge} from '09-NodeJS-Challenge';
