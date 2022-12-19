@@ -1,5 +1,8 @@
-const { writeFile } = require('fs');
-const inquirer = require('inquirer');
+// const { writeFile } = require('fs');
+// const inquirer = require('inquirer');
+
+// import inquirer from "inquirer";
+// import {09-NodeJS-Challenge} from '09-NodeJS-Challenge';
 
 inquirer
   .prompt([
