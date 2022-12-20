@@ -1,23 +1,13 @@
-const writeFile = require('writeFile');
-const fs = require('fs');
+// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
+const filePath = '.node_modules'
 
-const filePath = './node_modules'
-
-fs.readFile(filePath, function onReadFile(err, result) {
-    if (err) {
-        console.log('Error: ' + err)
-        return
-    }
-
-    console.log('File successfully read: ' + result)
-})
-
-// import inquirer from "inquirer";
-// import {09-NodeJS-Challenge} from '09-NodeJS-Challenge';
-
+// TODO: Create an array of questions for user input
+//const questions was here before i changed it-probably needs to be changed back
+// const questions = [
 inquirer
-  .prompt([
+    .prompt([
     {
         type: 'input',
         name: 'title',
@@ -60,21 +50,21 @@ inquirer
     },
 
   ])
-  .then((answers) => {
-    writeFile('README.md', data, (err) => {
-        if (err) throw err;
-    });
-    // Use user feedback for... whatever!!
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  });
 
-  inquirer.prompt(questions).then((answers) => {
-    console.log('\nREADME');
-    console.log(JSON.stringify(answer, null, ' '));
-  });
+//   fs.readFile(filePath, function onReadFile(err, result) {
+//     if (err) {
+//         console.log('Error: ' + err)
+//         return
+//     }
+
+//     console.log('File successfully read: ' + result)
+// })
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {}
+
+// TODO: Create a function to initialize app
+function init() {}
+
+// Function call to initialize app
+init();
