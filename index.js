@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const filePath = '.node_modules'
+const markdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 //const questions was here before i changed it-probably needs to be changed back
@@ -39,7 +40,6 @@ const questions = [
         message: 'Enter the test instructions.',
     },
     {
-        //need to add a badge to the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under.
         type: 'list',
         name: 'License',
         message: 'Which license are you using',
@@ -64,7 +64,19 @@ const questions = [
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    
+    // inquirer.createPromptModule(questions)
+    // .then((inquirerResponse, data) => {
+    //     console.log("README being created");
+    //     fs.writeReadMe("README.md", inquirerResponse, data);
+    // })
+    // .catch((err) => {
+    //     console.log(err);
+    // })
+}
 
 // Function call to initialize app
 init();
+
+// const promise = new promise(resolve, reject);
