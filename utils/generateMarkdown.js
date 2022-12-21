@@ -37,15 +37,15 @@ function generateMarkdown(data) {
 
 
   # Table of Content
-  -[Description](#Description)
+  -[description](#description)
 
-  -[Installation](#Installation)
+  -[installation](#installation)
   
-  -[Usage](#Usage)
+  -[usage](#usage)
 
-  -[How to Contribute](#Contribution)
+  -[contribution](#contribution)
 
-  -[Tests](#Tests)
+  -[tests](#tests)
 
   -${renderLicenseLink(data.license)}
 
@@ -57,7 +57,7 @@ function generateMarkdown(data) {
 
   ${data.username}
 
-## Description:
+## description:
 
   ${data.description}
 
