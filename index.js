@@ -5,10 +5,7 @@ const filePath = '.node_modules'
 const markdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-//const questions was here before i changed it-probably needs to be changed back
 const questions = [
-// inquirer
-//     .prompt([
     {
         type: 'input',
         name: 'Title',
@@ -51,14 +48,14 @@ const questions = [
 
   ]
 
-//   fs.readFile(filePath, function onReadFile(err, result) {
-//     if (err) {
-//         console.log('Error: ' + err)
-//         return
-//     }
+  fs.readFile(filePath, function onReadFile(err, result) {
+    if (err) {
+        console.log('Error: ' + err)
+        return
+    }
 
-//     console.log('File successfully read: ' + result)
-// })
+    console.log('File successfully read: ' + result)
+})
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
