@@ -1,82 +1,64 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const filePath = '.node_modules'
 const markdown = require('./utils/generateMarkdown');
+//path has join and resolve from the directory
+const path = require('path');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
-        name: 'Title',
+        name: 'title',
         message: 'What is the title of your README?',
     },
     {
         type: 'input',
-        name: 'Description',
+        name: 'description',
         message: 'Enter a short description to your README explaining the what, why, and how.',
     },
     {
         type: 'input',
-        name: 'Installation',
+        name: 'installation',
         message: 'Enter the steps required to install your project by using a step-by-step guide. Include screenshots.',
     },
     {
         type: 'input',
-        name: 'Usage',
+        name: 'usage',
         message: 'Enter the usage infromation.',
     },
     {
         type: 'input',
-        name: 'How to Contribute',
+        name: 'contribution',
         message: 'Enter the contribution guidelines.',
     },
     {
         type: 'input',
-        name: 'Tests',
+        name: 'tests',
         message: 'Enter the test instructions.',
     },
     {
         type: 'list',
-        name: 'License',
+        name: 'license',
         message: 'Which license are you using',
-        choices: ['MIT License', 'GNU General Public License v3.0'],
-        when (answers) {
-            return answers.comments !== 'None';
-        },
+        choices: ['MIT', 'GNU'],
     },
 
   ]
 
-//   fs.readFile(filePath, function onReadFile(err, result) {
-//     if (err) {
-//         console.log('Error: ' + err)
-//         return
-//     }
-
-//     console.log('File successfully read: ' + result)
-// })
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
-    inquirer.createPromptModule(questions, answers)
-    // const prompt = inquirer.createPromptModule(questions)
-
-    // prompt(questions).then(inquirerResponse, data);
-    // .then((inquirerResponse, data) => {
-    //     console.log("README being created");
-    //     fs.writeReadMe("README.md", inquirerResponse, data);
-    // })
-    // .catch((err) => {
-    //     console.log(err);
-    // })
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then(inquireResponse => {
+        writeToFile('README.md', markdown({...inquireResponse}))
+    })
+}
 
 // Function call to initialize app
 init();
 
-// const promise = new promise(resolve, reject);

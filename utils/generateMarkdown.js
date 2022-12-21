@@ -2,58 +2,96 @@
 // If there is no license, return an empty string
 // let renderLicenseBadge = renderLicenseBadge('MIT License', 'GNU General Public License v3.0');
 
-// function renderLicenseBadge(license) {
-//   return ? 'MIT License' : [![MIT License](https://img.shields.io/travis/com/CarrieLJ/09-NodeJS-Challenge?color=Green&label=License&style=plastic)]
-// }
+function renderLicenseBadge(license) {
+  if (license !== "None") {
+    return `![github license](https://img.shields.io/badge/license-${license}-green.svg)`;
+  }
+  return '';
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license !== "None") {
+    return `[Licenses](#Licenses)`;
+  }
+  return '';
+
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license !== "None") {
+    return `##Licenses:`;
+  }
+  return '';
+
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ${renderLicenseBadge(data.license)}
+
+
   # Table of Content
   -[Description](#Description)
+
   -[Installation](#Installation)
+  
   -[Usage](#Usage)
+
   -[How to Contribute](#Contribution)
+
   -[Tests](#Tests)
-  -[Licenses](#Licenses)
+
+  -${renderLicenseLink(data.license)}
+
   -[username](#username)
+
   -[profile](#profile)
 
+## username:
+
   ${data.username}
-  ##username:
 
-    ${data.Description}
-  ##Description:
+## Description:
 
-    ${data.Installation}
-##Installation:
+  ${data.description}
 
-  ${data.Usage}
-##Usage: 
+## Installation:
 
-  ${data.Contribution}
-##How to Contribute:
+  ${data.installation}
 
-  ${data.Tests}
-##Tests:
+## Usage: 
 
-  ${data.Licenses}
-##Licenses:
+  ${data.usage}
 
-  ${data.Email}
-##Email: 
+## How to Contribute:
+
+  ${data.contribution}
+
+## Tests:
+
+  ${data.tests}
+
+## License
+
+${renderLicenseSection(data.license)}
+
+  ${data.license}
+
+
+## Email: 
+
+  ${data.email}
+
+## Github Profile:
 
   ${data.profile}
-##profile:
+
 `;
 }
 
