@@ -48,22 +48,22 @@ const questions = [
 
   ]
 
-  fs.readFile(filePath, function onReadFile(err, result) {
-    if (err) {
-        console.log('Error: ' + err)
-        return
-    }
+//   fs.readFile(filePath, function onReadFile(err, result) {
+//     if (err) {
+//         console.log('Error: ' + err)
+//         return
+//     }
 
-    console.log('File successfully read: ' + result)
-})
+//     console.log('File successfully read: ' + result)
+// })
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
 
-// TODO: Create a function to initialize app
-function init() {
-    
-    // inquirer.createPromptModule(questions)
+    inquirer.createPromptModule(questions, answers)
+    // const prompt = inquirer.createPromptModule(questions)
+
+    // prompt(questions).then(inquirerResponse, data);
     // .then((inquirerResponse, data) => {
     //     console.log("README being created");
     //     fs.writeReadMe("README.md", inquirerResponse, data);
@@ -72,6 +72,9 @@ function init() {
     //     console.log(err);
     // })
 }
+
+// TODO: Create a function to initialize app
+function init() {}
 
 // Function call to initialize app
 init();
