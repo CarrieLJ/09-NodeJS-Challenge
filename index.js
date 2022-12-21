@@ -5,43 +5,43 @@ const filePath = '.node_modules'
 
 // TODO: Create an array of questions for user input
 //const questions was here before i changed it-probably needs to be changed back
-// const questions = [
-inquirer
-    .prompt([
+const questions = [
+// inquirer
+//     .prompt([
     {
         type: 'input',
-        name: 'title',
+        name: 'Title',
         message: 'What is the title of your README?',
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'Description',
         message: 'Enter a short description to your README explaining the what, why, and how.',
     },
     {
         type: 'input',
-        name: 'installation',
+        name: 'Installation',
         message: 'Enter the steps required to install your project by using a step-by-step guide. Include screenshots.',
     },
     {
         type: 'input',
-        name: 'usage',
+        name: 'Usage',
         message: 'Enter the usage infromation.',
     },
     {
         type: 'input',
-        name: 'contribution guidelines',
+        name: 'How to Contribute',
         message: 'Enter the contribution guidelines.',
     },
     {
         type: 'input',
-        name: 'test instructions',
+        name: 'Tests',
         message: 'Enter the test instructions.',
     },
     {
         //need to add a badge to the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under.
         type: 'list',
-        name: 'license',
+        name: 'License',
         message: 'Which license are you using',
         choices: ['MIT License', 'GNU General Public License v3.0'],
         when (answers) {
@@ -49,7 +49,7 @@ inquirer
         },
     },
 
-  ])
+  ]
 
 //   fs.readFile(filePath, function onReadFile(err, result) {
 //     if (err) {
