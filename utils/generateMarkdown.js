@@ -3,7 +3,7 @@
 let renderLicenseBadge = renderLicenseBadge('MIT License', 'GNU General Public License v3.0');
 
 function renderLicenseBadge(license) {
-  return https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>
+  return [![MIT License](https://img.shields.io/travis/com/CarrieLJ/09-NodeJS-Challenge?color=Green&label=License&style=plastic)]
 }
 
 // TODO: Create a function that returns the license link
