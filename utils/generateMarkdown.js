@@ -1,7 +1,5 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-// let renderLicenseBadge = renderLicenseBadge('MIT License', 'GNU General Public License v3.0');
-
 function renderLicenseBadge(license) {
   if (license !== "None") {
     return `![github license](https://img.shields.io/badge/license-${license}-green.svg)`;
@@ -13,7 +11,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "None") {
-    return `[Licenses](#Licenses)`;
+    return `[license](#license)`;
   }
   return '';
 
@@ -23,7 +21,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== "None") {
-    return `##Licenses:`;
+    return `## License:`;
   }
   return '';
 
