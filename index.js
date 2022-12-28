@@ -26,6 +26,12 @@ const questions = [
         type: 'input',
         name: 'usage',
         message: 'Enter the usage infromation.',
+    },    
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Which license are you using',
+        choices: ['MIT', 'GNU'],
     },
     {
         type: 'input',
@@ -38,11 +44,16 @@ const questions = [
         message: 'Enter the test instructions.',
     },
     {
-        type: 'list',
-        name: 'license',
-        message: 'Which license are you using',
-        choices: ['MIT', 'GNU'],
+        type: 'input',
+        name: 'questions',
+        message: 'Enter your GitHub username and link to GitHub profile.',
     },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter your email address.',
+    },
+
 
   ]
 
